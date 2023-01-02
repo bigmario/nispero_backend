@@ -14,14 +14,6 @@ engine = create_engine(
     SQLALCHEMY_DATABASE_URL, echo=False if conf.log_level == "info" else True
 )
 
-# SQLALCHEMY_DATABASE_URL = "sqlite:///./data.db"
-
-
-# engine = create_engine(
-#     SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}, echo=True
-# )
-
-
 Base = declarative_base()
 
 

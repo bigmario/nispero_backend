@@ -1,1 +1,1 @@
-from .db_schemas import User, UserBase, UserCreate, UserUpdate
+from .db_schemas import Subscriber, SubscriberBase, SubscriberCreate

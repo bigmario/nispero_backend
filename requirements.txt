@@ -6,3 +6,5 @@ psycopg2-binary
 bcrypt
 python-multipart
 pyjwt
+email-validator
+fastapi-mail
