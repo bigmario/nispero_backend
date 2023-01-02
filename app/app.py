@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Depends, status
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi_pagination import add_pagination
 
 from sqlalchemy.orm import Session
 
@@ -48,3 +49,6 @@ async def index():
             "Message": "Welcome To Nispero API !!",
         }
     )
+
+
+add_pagination(app)

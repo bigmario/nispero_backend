@@ -1,6 +1,7 @@
 from typing import List, Any
 from fastapi import Body, APIRouter, status, Depends, Query, Path
 from fastapi.exceptions import HTTPException
+from fastapi_pagination import Page, paginate
 
 from sqlalchemy.orm import Session
 
@@ -36,7 +37,7 @@ async def create_subscription(
 
 @subscriptions_router.get(
     path="/subscriptions",
-    response_model=List[Subscriber],
+    response_model=Page[Subscriber],
     response_model_exclude_unset=True,
     status_code=status.HTTP_200_OK,
 )
@@ -49,7 +50,8 @@ async def get_all_subscriptions(
     Get all the Users stored in database
     """
     try:
-        return await subscriptionsService.get_subscribers(email, db)
+        subscriptions = await subscriptionsService.get_subscribers(email, db)
+        return paginate(subscriptions)
     except Exception as e:
         raise HTTPException(status_code=e.status_code, detail=e.detail)
 

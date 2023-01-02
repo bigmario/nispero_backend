@@ -7,10 +7,13 @@ from .schemas.post_email import Email
 from .service.email_service import EmailService
 
 
-email_router = APIRouter(tags=["Email"])
+email_router = APIRouter(tags=["Contact"])
 
 
-@email_router.post("/contact/async")
+@email_router.post(
+    path="/contact/async",
+    status_code=status.HTTP_200_OK,
+)
 async def send_email_asynchronous(
     body: Email = Body(...),
     email_service: EmailService = Depends(),
@@ -21,7 +24,10 @@ async def send_email_asynchronous(
     )
 
 
-@email_router.post("/contact/bg-task")
+@email_router.post(
+    path="/contact/bg-task",
+    status_code=status.HTTP_200_OK,
+)
 def send_email_backgroundtasks(
     background_tasks: BackgroundTasks,
     body: Email = Body(...),
