@@ -29,4 +29,5 @@ class SubscriptionsRepo:
         )
 
     def fetch_all(self, db: Session, skip: int = 0, limit: int = 100):
-        return db.query(models.Subscription).offset(skip).limit(limit).all()
+        result = db.query(models.Subscription).offset(skip).limit(limit).all()
+        return result

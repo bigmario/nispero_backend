@@ -58,7 +58,7 @@ async def get_all_subscriptions(
 
 @subscriptions_router.get(
     path="/subscriptions/{id}",
-    response_model=Subscriber,
+    # response_model=Subscriber,
     response_model_exclude_unset=True,
     status_code=status.HTTP_200_OK,
 )
