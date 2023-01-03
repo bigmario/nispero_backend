@@ -37,7 +37,7 @@ app.include_router(email_router)
 
 
 @app.on_event("startup")
-async def start_db(db: Session = Depends(create_db)):
+async def start_db():
     create_db()
 
 
