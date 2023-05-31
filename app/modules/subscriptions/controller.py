@@ -1,7 +1,8 @@
 from typing import List, Any
 from fastapi import Body, APIRouter, status, Depends, Query, Path
 from fastapi.exceptions import HTTPException
-from fastapi_pagination import Page, paginate
+from fastapi_pagination import Page
+from fastapi_pagination.ext.sqlalchemy import paginate
 
 from sqlalchemy.orm import Session
 
