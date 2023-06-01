@@ -47,7 +47,7 @@ jobs:
             USERNAME : ${{ secrets.USERNAME  }}
             
         run: |
-          echo ${PRIVATE_KEY} > private_key.pem && chmod 400 private_key.pem
+          echo "${PRIVATE_KEY}" | tr -d '\r' > private_key.pem && chmod 400 private_key.pem
           ssh -i private_key.pem ${USERNAME}@${HOSTNAME} '
           cd /home/ubuntu/nispero_backend &&
           git checkout main &&
