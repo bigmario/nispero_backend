@@ -48,10 +48,10 @@ jobs:
         run: |
           echo "$PRIVATE_KEY" >> private_key.pem
           chmod 400 private_key.pem
-          ssh -o StrictHostKeyChecking=no -i private_key.pem $USERNAME@$HOSTNAME'
-          cd /home/ubuntu/nispero_backend &&
-          git checkout main &&
-          git fetch --all &&
-          git reset --hard origin/main &&
+          ssh -o StrictHostKeyChecking=no -i private_key.pem ${USERNAME}@${HOSTNAME}'
+          cd /home/ubuntu/nispero_backend
+          git checkout main
+          git fetch --all
+          git reset --hard origin/main
           git pull origin main
           '
