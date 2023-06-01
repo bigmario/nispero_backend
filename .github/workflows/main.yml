@@ -47,7 +47,7 @@ jobs:
             HOSTNAME: ${{ secrets.HOSTNAME  }}
         run: |
           echo "$PRIVATE_KEY" > private_key.pem && chmod 600 private_key.pem
-          ssh -o StrictHostKeyChecking=no -i private_key.pem $USERNAME@$HOSTNAME '
+          ssh -i private_key.pem $USERNAME@$HOSTNAME '
           cd /home/ubuntu/nispero_backend &&
           git checkout main &&
           git fetch --all &&
