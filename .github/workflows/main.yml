@@ -47,8 +47,8 @@ jobs:
             USER_NAME : ${{ secrets.USERNAME  }}
             
         run: |
-          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-          ssh -i private_key ${USER_NAME}@${HOSTNAME} '
+          echo "$PRIVATE_KEY" > private_key.pem && chmod 400 private_key
+          ssh -i private_key.pem ${USER_NAME}@${HOSTNAME} '
           
             #Now we have got the access of EC2 and we will start the deploy .
             cd /home/ubuntu/nispero_backend &&
