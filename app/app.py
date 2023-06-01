@@ -12,7 +12,7 @@ from app.core.database import create_db
 
 
 app = FastAPI()
-app.title = "Nispero Subscription Management API"
+app.title = "Nispero Subscription Management API V2"
 app.description = """
     API developed with FastAPI for Nispero
     Trienlace <trienlace@gmail.com>
