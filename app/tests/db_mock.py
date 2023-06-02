@@ -8,10 +8,6 @@ from app.core.database.services.db_service import Base
 from app.app import app
 from app.core.database import get_db
 
-from app.core.config import Settings
-
-config = Settings()
-
 
 SQLALCHEMY_DATABASE_URL = "sqlite:///./app/tests/test.db"
 
