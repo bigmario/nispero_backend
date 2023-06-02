@@ -54,6 +54,8 @@ jobs:
           MAIL_PORT: 2525
           MAIL_SERVER: none
           MAIL_FROM_NAME: none
+          MAIL_USE_TLS: 1
+          MAIL_USE_SSL: 0
         run: | 
           pytest -vv app/tests/test_app.py
 
