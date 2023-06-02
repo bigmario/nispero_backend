@@ -9,3 +9,5 @@ pyjwt
 email-validator
 fastapi-mail
 fastapi-pagination
+httpx
+pytest
