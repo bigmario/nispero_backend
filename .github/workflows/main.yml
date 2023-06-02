@@ -1,8 +1,12 @@
 name: CI/CD Nispero Backend
 
 on:
+  pull_request:
+    types:
+      - opened
+    branches: [ main, dev ]
   push:
-    branches: [ main ]
+    branches: [ main, dev ]
 
 jobs:
 #First we will see the application build or not , then we will deploy in EC2
