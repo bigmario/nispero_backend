@@ -21,12 +21,11 @@ class EmailService:
             MAIL_FROM_NAME=settings.mail_from_name,
             MAIL_STARTTLS=bool(settings.mail_use_tls),
             MAIL_SSL_TLS=bool(settings.mail_use_ssl),
-            USE_CREDENTIALS=True,
+            USE_CREDENTIALS=bool(settings.mail_use_credentials),
             TEMPLATE_FOLDER=f"{os.getcwd()}/app/modules/mail/templates",
         )
 
     async def send_email_async(self, body: Email):
-
         message = MessageSchema(
             subject=body.subject,
             recipients=[settings.mail_to],
